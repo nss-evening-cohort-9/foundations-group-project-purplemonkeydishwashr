@@ -4,7 +4,7 @@ body {
 
 .navbar-light .navbar-nav .nav-link:hover, .navbar-light .navbar-nav .nav-link:focus{
     color: purple;
-    letter-spacing: 2px;
+    transform: scale(1.1);
 }
 
 .navbar-brand {
@@ -23,6 +23,7 @@ footer {
 
 .carousel-item img {
     opacity: .75;
+
 }
 
 .carousel-caption h2{
@@ -52,6 +53,24 @@ footer {
     text-transform: uppercase;
 }
 
+.btn {
+    background-color: #ab96dd;
+}
+
+.fa-instagram {
+    margin-right: 10px;
+    color: #ab96dd;
+}
+
+.fa-facebook-f, .fa-twitter {
+    margin-left: 10px;
+    margin-right: 10px;
+    color: #ab96dd;
+}
+
+.f-heading {
+    font-family: 'Permanent Marker', cursive;
+}
 
 /* Mobile Styles */
 @media only screen and (max-width: 500px) {
@@ -79,7 +98,7 @@ footer {
 
     footer {
         justify-content: center;
-        position: absolute;
+        position: relative;
         bottom: 0;
     }
     .form-group {
