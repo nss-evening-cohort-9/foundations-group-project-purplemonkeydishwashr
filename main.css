@@ -34,4 +34,10 @@ footer {
     .form-group {
     justify-content: center;
     }
+    .f-heading {
+        text-align: center;
+    }
+    .btn {
+        justify-content: center;
+    }
   }
