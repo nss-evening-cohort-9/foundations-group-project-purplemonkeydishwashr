@@ -72,6 +72,10 @@ footer {
     .nav-link:hover, .nav-link:focus{
         justify-content: center;
     }
+
+    footer {
+
+    }
     .footer-address {
       display: none;
     }
