@@ -25,3 +25,13 @@ footer {
 .random {
     color: #363636;
 }
+
+/* Mobile Styles */
+@media only screen and (max-width: 400px) {
+    .footer-address {
+      display: none;
+    }
+    .form-group {
+    justify-content: center;
+    }
+  }
