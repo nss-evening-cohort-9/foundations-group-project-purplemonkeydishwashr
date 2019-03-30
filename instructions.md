@@ -28,7 +28,7 @@ Create a Project board for your company site and make the columns for ('Backlog'
 ### Git
 Your team is going to learn how to use git to enable good teamwork when building a software product.
 
-1. Follow the instructons in class to clone down the repo
+1. Follow the instructions in class to clone down the repo
 1. `cd` into the directory that got created.
 1. Before anyone on the team writes a single line of code, the team will decide on a branch naming strategy. Branches should be descriptive of the work that is going to be done on that branch. Some teams also decide to add the developer's information to the branch name, such as initials. For example, a developer named Jasmine Sheboygen is going to work on the navbar for the web site. A good name for the branch would be `js-navbar`.
 1. Your team already has a README.md file so there is no reason anyone should push to the master branch - LIKE EVER.  Also at some point there should probably exist a good, proper readme with screenshots
