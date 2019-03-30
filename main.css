@@ -15,3 +15,13 @@ body {
 .brand-image {
     max-width: 75px;
 }
+
+footer {
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+}
+
+.random {
+    color: #363636;
+}
