@@ -16,11 +16,6 @@ body {
     max-width: 75px;
 }
 
-footer {
-    width: 100%;
-    margin-top: 20px;
-}
-
 .logo img{
     width: 225px;
 }
@@ -122,7 +117,12 @@ background-color: #c6bfda;
 background-color: #aca5be;
 }
 
-
+footer {
+    width: 100%;
+    margin-top: 20px;
+    position: fixed;
+    bottom: 0px;
+}
 /* Mobile Styles */
 @media only screen and (max-width: 500px) {
     .navbar-brand {
@@ -149,7 +149,7 @@ background-color: #aca5be;
 
     footer {
         justify-content: center;
-        position: relative;
+        position: fixed;
         bottom: 0;
     }
     .form-group {
