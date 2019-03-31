@@ -21,6 +21,10 @@ footer {
     margin-top: 20px;
 }
 
+.logo img{
+    width: 225px;
+}
+
 .carousel-item img {
     opacity: .75;
 
@@ -71,6 +75,53 @@ footer {
 .f-heading {
     font-family: 'Permanent Marker', cursive;
 }
+#topThreeDiv {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1980px;
+    justify-content: center;
+}
+
+.card {
+width:270px;
+margin: 10px;
+text-align: center;
+background-color: white;
+height: auto;
+box-shadow: 1px 2px 4px 1px black;
+
+}
+
+.card-header {
+width:100%;
+}
+
+.card-img-top {
+max-width: 400px;;
+}
+
+.card .btn {
+background-color: #988bb8;
+border: none;
+}
+
+.card .btn:hover{
+background-color: #363636;
+border: none,
+}
+
+.light {
+background-color: #e4dcfa;
+}
+
+.medium {
+background-color: #c6bfda;
+}
+
+.dark {
+background-color: #aca5be;
+}
+
 
 /* Mobile Styles */
 @media only screen and (max-width: 500px) {
