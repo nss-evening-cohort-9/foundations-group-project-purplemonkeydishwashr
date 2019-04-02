@@ -86,7 +86,6 @@ height: auto;
 box-shadow: 1px 2px 4px 1px black;
 
 }
-
 .card-header {
 width:100%;
 }
@@ -165,4 +164,19 @@ footer {
     .text-center a{
        display: none;
     }
+  }
+  
+  .eventcard {
+    width:270px;
+    margin: 10px;
+    text-align: center;
+    background-color: #363636;
+    height: 500px;
+    box-shadow: 1px 2px 4px 1px black; 
+    color: #e0d4fc;
+} 
+
+  #eventimg {
+      height: 250px;
+      width: 275px;
   }
