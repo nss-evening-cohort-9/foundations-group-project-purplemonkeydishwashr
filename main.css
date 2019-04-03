@@ -170,13 +170,17 @@ footer {
     width:270px;
     margin: 10px;
     text-align: center;
-    background-color: #363636;
-    height: 500px;
+    background-color: #807e7e;
+    height: 545px;
     box-shadow: 1px 2px 4px 1px black; 
     color: #e0d4fc;
+    font-family: 'Permanent Marker', cursive;
 } 
-
   #eventimg {
-      height: 250px;
-      width: 275px;
+      height: 275px;
+      width: 330px;
+      border: 1px solid #363636;
   }
+  .modal-backdrop {
+    background-color: #988bb8;
+}
