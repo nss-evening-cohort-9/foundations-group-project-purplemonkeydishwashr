@@ -165,16 +165,17 @@ footer {
        display: none;
     }
   }
-  
+  /* Events */
   .eventcard {
     width:270px;
     margin: 10px;
     text-align: center;
-    background-color: #807e7e;
+    background-color: #979494;
     height: 545px;
     box-shadow: 1px 2px 4px 1px black; 
     color: #e0d4fc;
     font-family: 'Permanent Marker', cursive;
+    border: 1px solid #363636;
 } 
   #eventimg {
       height: 275px;
