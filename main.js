@@ -272,23 +272,17 @@ const brewMastersBuilder = (x) => {
 
 const init = () => {
 
-    // submitButton.addEventListener("click", submitEmail);
-=======
-    submitButton.addEventListener("click", submitEmail);
-    // closeButton.addEventListener("click", closeModal);
-    // topThree(beer);
-    // eventType(events);
+    submitButton.addEventListener('click', submitEmail);
     if (document.getElementById('eventContainer')){
         eventType(events);
-
+    };
     if (document.getElementById('topThreeDiv')){
     topThree();
     };
     //Brew Master's (begin)
     if (document.getElementById('brewMastersDiv')){
     brewMastersBuilder(brewMasters);
-    }; //Brew Master's (end)
-    //Available Beer's Page (begin)
+    };
     if(document.getElementById('myBeer')){
         beerBuilder();
     };
@@ -296,19 +290,5 @@ const init = () => {
 
 };
 
+
 init();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

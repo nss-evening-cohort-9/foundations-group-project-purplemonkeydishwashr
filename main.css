@@ -77,6 +77,7 @@ h1 {
 .f-heading {
     font-family: 'Permanent Marker', cursive;
 }
+
 #topThreeDiv {
     display: flex;
     flex-wrap: wrap;
@@ -86,7 +87,7 @@ h1 {
 
 .card {
 width:270px;
-/* margin: 10px; */
+margin: 10px;
 text-align: center;
 background-color: white;
 height: auto;
@@ -173,13 +174,10 @@ footer {
     }
   }
 
-
-
   #myBeer {
       margin-bottom: 270px;
       overflow: hidden;
   }
-=======
   /* Events */
   .eventcard {
     width:270px;
