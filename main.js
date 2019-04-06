@@ -14,8 +14,6 @@ $('#myModal').on('shown.bs.modal', function () {
 const submitButton = 
 document.getElementById('submitButton')
 
-
-
 //Index - Top 3 Beers Loops 
 allBeers = [
     {
@@ -114,14 +112,13 @@ const beers = [
 
 
 
-
 const beerBuilder = () => {
     let beerString = '';
     beers.forEach((beer) => {
         let ingredientString = '';
         beer.ingredients.forEach(ingredient => {
             // loop thru ingredients and build html
-            ingredientString += `<p>${beer.ingredients}</p>`;
+            ingredientString += `<p>${ingredient}</p>`;
         });
         console.log(ingredientString);
         beerString += `<div class="card mt-1 mb-2 col-4">`;
@@ -130,24 +127,20 @@ const beerBuilder = () => {
         beerString += `<img class="card-img-top" src=${beer.imageUrl} alt="Card image cap" ></img>`
         beerString += `<p class="card-text" id=${beer.name}>${beer.description}</p>`;
         beerString += `<div class='d-none'>${ingredientString}</div>`;
-        beerString +=  `<a href="javascript:void(0)" class="btn btn-primary infoButton" id=beer${beer.id}>Info</a>`;
+        beerString +=  `<a href="javascript:void(0)" class="btn btn-primary infoButton" id=beer${beer.id}>Ingredients</a>`;
         beerString += `</div>`;
         beerString += `</div>`;
         // add event listener for the a tag, traverse the dom to find the div with the d-none, remove the class
     });
     printToDom('myBeer', beerString);
+    addDeleteEvents();
 
 };
 
 const deleteFunction = (e) => {
-    const buttonId = e.target.previousSibling;
-    ingredients.forEach((ingredient, index) => {
-        if(ingredient.id === buttonId){
-            ingredients.splice(index, 1);
-        }
-    });
-    beerBuilder(ingredients);
-    addDeleteEvents();
+    const IngredientsDiv = e.target.previousSibling;
+    IngredientsDiv.classList.remove('d-none');
+   
 };
 
 const addDeleteEvents = () => {
@@ -156,15 +149,6 @@ const addDeleteEvents = () => {
         deleteButtons[i].addEventListener('click', deleteFunction);
     }
 };
-
-// const myFunction = () => {
-//     var x = document.getElementById("text");
-//     if (x.style.display === "none") {
-//       x.style.display = "block";
-//     } else {
-//       x.style.display = "none";
-//     }
-//   }
 
 
 
