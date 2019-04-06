@@ -13,6 +13,7 @@ $('#myModal').on('shown.bs.modal', function () {
 const submitButton = 
 document.getElementById('submitButton');
 
+
 // Brewery events
 const events = [
     {
@@ -124,6 +125,107 @@ allBeers.forEach((beer) => {
 printToDom('topThreeDiv',domString);
 };
 
+//Available Beers
+const beers = [
+    {
+        id: 0,
+        imageUrl: "https://user-images.githubusercontent.com/43094838/55278679-7ecb1800-52dd-11e9-94d1-99960ee6e9d1.png",
+        name: "HaramBAE",
+        description: 'This beer will probably kill you. 99.9% alcohol. Beware.',
+        ingredients: ['good stuff', 'great stuff', 'awesome stuff']
+        
+    },
+    
+    {
+        id: 1,
+        imageUrl: "https://user-images.githubusercontent.com/43094838/55278677-7bd02780-52dd-11e9-8043-3dbdae7ef11b.png",    
+        name: "MoJo JoJo Brew",
+        description: 'Beer and energy drink combined. You will be unstoppable.',
+        ingredients: ['good stuff', 'great stuff', 'awesome stuff']
+
+    },
+
+    {
+        id: 2,
+        imageUrl: "https://user-images.githubusercontent.com/43094838/55278678-7d015480-52dd-11e9-9bea-a8832cc1699a.png",
+        name: "Curious George",
+        description: 'In case you were curious, this is our non-alcoholic beer.',
+        ingredients: ['good stuff', 'great stuff', 'awesome stuff']
+        
+    },
+    
+    {
+        id: 3,
+        imageUrl: "https://user-images.githubusercontent.com/43094838/55278680-8094db80-52dd-11e9-848d-faa1662464ba.png",
+        name: "King Kong",
+        description: "This beer will beer will have you beating your chest because of the hoppy taste...This is the best-seller",
+        ingredients: ['good stuff', 'great stuff', 'awesome stuff']
+
+    },
+
+    {
+        id: 4,
+        imageUrl: "https://user-images.githubusercontent.com/43094838/55278682-82f73580-52dd-11e9-9adc-53299453725e.png",
+        name: "Rafiki",
+        description: 'This IPA has an incredible taste of spices and herbs. Very unique...',
+        ingredients: ['good stuff', 'great stuff', 'awesome stuff']
+
+    },
+
+    {
+        id: 5,
+        imageUrl: "https://user-images.githubusercontent.com/43094838/55278683-84286280-52dd-11e9-9a78-67c61c0c2e8e.png",
+        name: "Ceasar",
+        description: "This beer help you pass NSS with less assistance as possible",
+        ingredients: ['good stuff', 'great stuff', 'awesome stuff']
+
+    }
+];
+
+
+
+const beerBuilder = () => {
+    let beerString = '';
+    beers.forEach((beer) => {
+        let ingredientString = '';
+        beer.ingredients.forEach(ingredient => {
+            // loop thru ingredients and build html
+            ingredientString += `<p>${ingredient}</p>`;
+        });
+        console.log(ingredientString);
+        beerString += `<div class="card mt-1 mb-2 col-4">`;
+        beerString += `<div class="card-body">`;
+        beerString += `<h2 class="card-title">${beer.name}</h2>`;
+        beerString += `<img class="card-img-top" src=${beer.imageUrl} alt="Card image cap" ></img>`
+        beerString += `<p class="card-text" id=${beer.name}>${beer.description}</p>`;
+        beerString += `<div class='d-none'>${ingredientString}</div>`;
+        beerString +=  `<a href="javascript:void(0)" class="btn btn-primary infoButton" id=beer${beer.id}>Ingredients</a>`;
+        beerString += `</div>`;
+        beerString += `</div>`;
+        // add event listener for the a tag, traverse the dom to find the div with the d-none, remove the class
+    });
+    printToDom('myBeer', beerString);
+    addDeleteEvents();
+
+};
+
+const deleteFunction = (e) => {
+    const IngredientsDiv = e.target.previousSibling;
+    IngredientsDiv.classList.remove('d-none');
+   
+};
+
+const addDeleteEvents = () => {
+    const deleteButtons = document.getElementsByClassName('infoButton');
+    for(let i=0; i<deleteButtons.length; i++){
+        deleteButtons[i].addEventListener('click', deleteFunction);
+    }
+};
+
+
+
+    
+
 //Brew Master's (begin)
 const brewMasters = [
     {
@@ -169,13 +271,15 @@ const brewMastersBuilder = (x) => {
 //Brew Master's (end)
 
 const init = () => {
+
+    // submitButton.addEventListener("click", submitEmail);
+=======
     submitButton.addEventListener("click", submitEmail);
     // closeButton.addEventListener("click", closeModal);
     // topThree(beer);
     // eventType(events);
     if (document.getElementById('eventContainer')){
         eventType(events);
-        };
 
     if (document.getElementById('topThreeDiv')){
     topThree();
@@ -183,9 +287,15 @@ const init = () => {
     //Brew Master's (begin)
     if (document.getElementById('brewMastersDiv')){
     brewMastersBuilder(brewMasters);
+    }; //Brew Master's (end)
+    //Available Beer's Page (begin)
+    if(document.getElementById('myBeer')){
+        beerBuilder();
     };
-    //Brew Master's (end)
+    
+
 };
+
 init();
 
 

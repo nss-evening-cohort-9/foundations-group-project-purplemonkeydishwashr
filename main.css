@@ -86,7 +86,7 @@ h1 {
 
 .card {
 width:270px;
-margin: 10px;
+/* margin: 10px; */
 text-align: center;
 background-color: white;
 height: auto;
@@ -172,6 +172,14 @@ footer {
        display: none;
     }
   }
+
+
+
+  #myBeer {
+      margin-bottom: 270px;
+      overflow: hidden;
+  }
+=======
   /* Events */
   .eventcard {
     width:270px;
