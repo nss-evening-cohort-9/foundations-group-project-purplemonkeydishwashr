@@ -16,7 +16,6 @@ document.getElementById('submitButton')
 
 
 
-
 //Index - Top 3 Beers Loops 
 allBeers = [
     {
@@ -56,26 +55,31 @@ allBeers.forEach((beer) => {
 printToDom('topThreeDiv',domString);
 }
 
-//AvailBeers
+//Available Beers
 const beers = [
     {
+        id: 0,
         imageUrl: "https://user-images.githubusercontent.com/43094838/55278679-7ecb1800-52dd-11e9-94d1-99960ee6e9d1.png",
         name: "HaramBAE",
         description: 'This beer will probably kill you. 99.9% alcohol. Beware.',
+        ingredients: ['good stuff', 'great stuff', 'awesome stuff']
         
     },
     
     {
+        id: 1,
         imageUrl: "https://user-images.githubusercontent.com/43094838/55278677-7bd02780-52dd-11e9-8043-3dbdae7ef11b.png",    
-        name: "Curious George",
-        description: 'In case you were curious, this is our non-alcoholic beer.',
+        name: "MoJo JoJo Brew",
+        description: 'Beer and energy drink combined. You will be unstoppable.',
+        ingredients: ['good stuff', 'great stuff', 'awesome stuff']
 
     },
 
     {
         imageUrl: "https://user-images.githubusercontent.com/43094838/55278678-7d015480-52dd-11e9-9bea-a8832cc1699a.png",
-        name: "MoJo JoJo Brew",
-        description: 'Beer and energy drink combined. You will be unstoppable.',
+        name: "Curious George",
+        description: 'In case you were curious, this is our non-alcoholic beer.',
+        ingredients: ['good stuff', 'great stuff', 'awesome stuff']
 
     },
 
@@ -83,6 +87,7 @@ const beers = [
         imageUrl: "https://user-images.githubusercontent.com/43094838/55278680-8094db80-52dd-11e9-848d-faa1662464ba.png",
         name: "King Kong",
         description: "This beer will beer will have you beating your chest because of the hoppy taste...This is the best-seller",
+        ingredients: ['good stuff', 'great stuff', 'awesome stuff']
 
     },
 
@@ -90,13 +95,16 @@ const beers = [
         imageUrl: "https://user-images.githubusercontent.com/43094838/55278682-82f73580-52dd-11e9-9adc-53299453725e.png",
         name: "Rafiki",
         description: 'This IPA has an incredible taste of spices and herbs. Very unique...',
+        ingredients: ['good stuff', 'great stuff', 'awesome stuff']
 
     },
 
     {
         imageUrl: "https://user-images.githubusercontent.com/43094838/55278683-84286280-52dd-11e9-9a78-67c61c0c2e8e.png",
         name: "Ceasar",
-        description: "This beer help you pass NSS with assistance as possible",
+        description: "This beer help you pass NSS with less assistance as possible",
+        ingredients: ['good stuff', 'great stuff', 'awesome stuff']
+
     }
 ];
 
@@ -106,29 +114,98 @@ const beers = [
 const beerBuilder = () => {
     let beerString = '';
     beers.forEach((beer) => {
+        ingredientString = '';
+        beer.ingredients.forEach(ingredient => {
+            // loop thru ingredients and build html
+        })
         beerString += `<div class="card mt-1 mb-2 col-4">`;
         beerString += `<div class="card-body">`;
         beerString += `<h2 class="card-title">${beer.name}</h2>`;
         beerString += `<img class="card-img-top" src=${beer.imageUrl} alt="Card image cap" ></img>`
-        beerString += `<p class="card-text id="text">${beer.description}</p>`;
-        beerString +=  `<a href="#" class="btn btn-primary">Info</a>`;
+        beerString += `<p class="card-text" id=${beer.name}>${beer.description}</p>`;
+        beerString += `<div class='d-none'>${ingredientString}</div>`;
+        beerString +=  `<a href="javascript:void(0)" class="btn btn-primary button" id=beer${beer.id}>Info</a>`;
         beerString += `</div>`;
         beerString += `</div>`;
+        // add event listener for the a tag, traverse the dom to find the div with the d-none, remove the class
     });
     printToDom('myBeer', beerString);
 
 };
 
+const myFunction = () => {
+    var x = document.getElementById("text");
+    if (x.style.display === "none") {
+      x.style.display = "block";
+    } else {
+      x.style.display = "none";
+    }
+  }
 
-const buttonEvents = () => {
-    document.getElementById('btn').addEventListener('click', 'text');
+
+
+    
+
+//Brew Master's (begin)
+const brewMasters = [
+    {
+        image: `https://raw.githubusercontent.com/nss-evening-cohort-9/foundations-group-project-purplemonkeydishwashr/master/img/dm-img.jpg`,
+        name: `David`,
+        jobTitle: `Bystander`,
+        responsibilities: `Alcohol content tester`
+    },
+    {
+        image: `https://raw.githubusercontent.com/nss-evening-cohort-9/foundations-group-project-purplemonkeydishwashr/master/img/bio.jpg`,
+        name: `Jeressia`,
+        jobTitle: `CEO`,
+        responsibilities: `Finances, keeps the lights on (bc she's scared of the dark)`
+    },
+    {
+        image: `https://raw.githubusercontent.com/nss-evening-cohort-9/foundations-group-project-purplemonkeydishwashr/master/img/IMG_2230.JPG`,
+        name: `Lakia`,
+        jobTitle: `Lead Scientist`,
+        responsibilities: `Adds spice to everything including beer`
+    },
+    {
+        image: `https://raw.githubusercontent.com/nss-evening-cohort-9/foundations-group-project-purplemonkeydishwashr/master/img/calvin-img.jpg`,
+        name: `Calvin`,
+        jobTitle: `CTO`,
+        responsibilities: `Responsible for site malfunctions`
+    },
+];
+
+const brewMastersBuilder = (x) => {
+    let message = '';
+    x.forEach((brewMaster) => {
+        message += `<div class="card col-5" style="width: 18rem;">
+        <h2 class="card-title"><b>${brewMaster.name}</b></h2>
+        <img src='${brewMaster.image}' class="card-img-top rounded mx-auto" style="height: 60%;" alt="...">
+        <div class="card-body">
+          <h5 class="card-title"><b>${brewMaster.jobTitle}</b></h5>
+          <p class="card-text">${brewMaster.responsibilities}</p>
+        </div>
+      </div>`
+    });
+    printToDom('brewMastersDiv', message);
 };
+//Brew Master's (end)
 
 const init = () => {
-    beerBuilder();
-    // topThree();
     // submitButton.addEventListener("click", submitEmail);
+
+    if (document.getElementById('topThreeDiv')){
+    topThree();
+    };
+    //Brew Master's (begin)
+    if (document.getElementById('brewMastersDiv')){
+    brewMastersBuilder(brewMasters);
+    }; //Brew Master's (end)
+    //Available Beer's Page (begin)
+    if(document.getElementById('myBeer')){
+        beerBuilder();
+    };
     
+
 };
 
 init();

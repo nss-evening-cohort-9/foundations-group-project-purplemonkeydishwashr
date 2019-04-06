@@ -2,8 +2,15 @@ body {
     background-color: lavender;
 }
 
+h1 {
+    text-align: center;
+    font-family: 'Permanent Marker', cursive;
+    color: rgb(70, 57, 70);
+    margin: 5px;
+}
+
 .navbar-light .navbar-nav .nav-link:hover, .navbar-light .navbar-nav .nav-link:focus{
-    color: purple;
+    color: rgb(67, 20, 91);
     transform: scale(1.1);
 }
 
