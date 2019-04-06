@@ -1,5 +1,3 @@
-
-
 const printToDom = (divId, textToPrint) => {
     const selectDiv= document.getElementById(divId).innerHTML = textToPrint;
     // selectDiv.innerHTML += textToPrint;
@@ -174,7 +172,10 @@ const init = () => {
     submitButton.addEventListener("click", submitEmail);
     // closeButton.addEventListener("click", closeModal);
     // topThree(beer);
-    eventType(events);
+    // eventType(events);
+    if (document.getElementById('eventContainer')){
+        eventType(events);
+        };
 
     if (document.getElementById('topThreeDiv')){
     topThree();
