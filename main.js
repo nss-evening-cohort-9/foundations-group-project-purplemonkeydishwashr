@@ -87,7 +87,7 @@ const eventType = (l) => {
     //console.log(domString);
 };
 
-// Index - Top 3 Beers Loops 
+//Index - Top 3 Beers Loops 
 allBeers = [
     {
         headline:'Best Seller',
@@ -126,11 +126,64 @@ allBeers.forEach((beer) => {
 printToDom('topThreeDiv',domString);
 };
 
+//Brew Master's (begin)
+const brewMasters = [
+    {
+        image: `https://raw.githubusercontent.com/nss-evening-cohort-9/foundations-group-project-purplemonkeydishwashr/master/img/dm-img.jpg`,
+        name: `David`,
+        jobTitle: `Bystander`,
+        responsibilities: `Alcohol content tester`
+    },
+    {
+        image: `https://raw.githubusercontent.com/nss-evening-cohort-9/foundations-group-project-purplemonkeydishwashr/master/img/bio.jpg`,
+        name: `Jeressia`,
+        jobTitle: `CEO`,
+        responsibilities: `Finances, keeps the lights on (bc she's scared of the dark)`
+    },
+    {
+        image: `https://raw.githubusercontent.com/nss-evening-cohort-9/foundations-group-project-purplemonkeydishwashr/master/img/IMG_2230.JPG`,
+        name: `Lakia`,
+        jobTitle: `Lead Scientist`,
+        responsibilities: `Adds spice to everything including beer`
+    },
+    {
+        image: `https://raw.githubusercontent.com/nss-evening-cohort-9/foundations-group-project-purplemonkeydishwashr/master/img/calvin-img.jpg`,
+        name: `Calvin`,
+        jobTitle: `CTO`,
+        responsibilities: `Responsible for site malfunctions`
+    },
+];
+
+const brewMastersBuilder = (x) => {
+    let message = '';
+    x.forEach((brewMaster) => {
+        message += `<div class="card col-5" style="width: 18rem;">
+        <h2 class="card-title"><b>${brewMaster.name}</b></h2>
+        <img src='${brewMaster.image}' class="card-img-top rounded mx-auto" style="height: 60%;" alt="...">
+        <div class="card-body">
+          <h5 class="card-title"><b>${brewMaster.jobTitle}</b></h5>
+          <p class="card-text">${brewMaster.responsibilities}</p>
+        </div>
+      </div>`
+    });
+    printToDom('brewMastersDiv', message);
+};
+//Brew Master's (end)
+
 const init = () => {
     submitButton.addEventListener("click", submitEmail);
     // closeButton.addEventListener("click", closeModal);
-    topThree(beer);
+    // topThree(beer);
     eventType(events);
+
+    if (document.getElementById('topThreeDiv')){
+    topThree();
+    };
+    //Brew Master's (begin)
+    if (document.getElementById('brewMastersDiv')){
+    brewMastersBuilder(brewMasters);
+    };
+    //Brew Master's (end)
 };
 init();
 
