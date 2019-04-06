@@ -24,7 +24,7 @@ h1 {
 }
 
 .logo img{
-    width: 225px;
+    max-width: 225px;
 }
 
 .carousel-item img {
@@ -130,6 +130,33 @@ footer {
     position: fixed;
     bottom: 0px;
 }
+
+
+#myBeer {
+    margin-bottom: 270px;
+    overflow: hidden;
+}
+/* Events */
+.eventcard {
+  width:270px;
+  margin: 10px;
+  text-align: center;
+  background-color: #979494;
+  height: 545px;
+  box-shadow: 1px 2px 4px 1px black; 
+  color: #e0d4fc;
+  font-family: 'Permanent Marker', cursive;
+  border: 1px solid #363636;
+} 
+#eventimg {
+    height: 275px;
+    width: 330px;
+    border: 1px solid #363636;
+}
+.modal-backdrop {
+  background-color: #988bb8;
+}
+
 /* Mobile Styles */
 @media only screen and (max-width: 500px) {
     .navbar-brand {
@@ -172,29 +199,7 @@ footer {
     .text-center a{
        display: none;
     }
+    .logo img{
+        max-width: 105px;
+    }
   }
-
-  #myBeer {
-      margin-bottom: 270px;
-      overflow: hidden;
-  }
-  /* Events */
-  .eventcard {
-    width:270px;
-    margin: 10px;
-    text-align: center;
-    background-color: #979494;
-    height: 545px;
-    box-shadow: 1px 2px 4px 1px black; 
-    color: #e0d4fc;
-    font-family: 'Permanent Marker', cursive;
-    border: 1px solid #363636;
-} 
-  #eventimg {
-      height: 275px;
-      width: 330px;
-      border: 1px solid #363636;
-  }
-  .modal-backdrop {
-    background-color: #988bb8;
-}
