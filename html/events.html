@@ -31,53 +31,59 @@
       </ul>
     </div>
   </nav>
-    <h1>Purple Monkey Dishwasher</h1>
-    <button type="button" class="btn btn-info">Info</button>
-    <footer>
-        <aside>
-            <div class="text-center random">
-            <a href="#">-Back to Top-</a>
-            </div>
-        </aside>
-        <div class="card-footer d-flex">
-        <div class="footer-address col-4 offset-4 text-secondary">
-            <p class="f-heading">Purple Monkey Dishwasher</p>
-            1234 Gulch Avenue<br>
-            Nashville, TN 37228<br>
-            615-555-1234<br><br>
-            pmdb@email.com<br><br>
-            <p class="copy-string">Purple Monkey Dishwasher &copy; 2019</p>
-        </div>
-        <form>
-            <div class="form-group offset-1 text-secondary">
-                <p class="f-heading">Join our mailing list!</p>
-                <label for="exampleInputEmail1">Email address</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-            </div>
-            <button id='submitButton' type="submit" class="btn btn-dark text-light offset-4" data-toggle="modal" data-target="#submitModal">Submit</button>
-            <!-- Modal -->
-<div class="modal fade" id="submitModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Congratulations!</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
+    <!-- <h1>Purple Monkey Dishwasher</h1> -->
+    <!-- <button type="button" class="btn btn-info">Info</button> -->
+<div id="eventContainer" class="d-flex flex-wrap"></div>
+<footer class="position-relative">
+  <aside>
+      <div class="text-center random">
+      <a href="#">-Back to Top-</a>
       </div>
-      <div class="modal-body">
-        Welcome to the Purple Monkey Dishwasher Brew Masters Club!
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-      </div>
-    </div>
+  </aside>
+  <div class="card-footer d-flex">
+  <div class="logo offset-1"><img src="../img/logo.png"></div>
+  <div class="footer-address col-4 offset-2 text-secondary">
+      <p class="f-heading">Purple Monkey Dishwasher</p>
+      1234 Gulch Avenue<br>
+      Nashville, TN 37228<br>
+      615-555-1234<br>
+      <i class="fab fa-instagram"></i>
+      <i class="fab fa-facebook-f"></i>
+      <i class="fab fa-twitter"></i>
+      <br>
+      pmdb@email.com<br><br>
+      <p class="copy-string">Purple Monkey Dishwasher &copy; 2019</p>
   </div>
+  <form>
+      <div class="form-group text-secondary">
+          <p class="f-heading">Join our mailing list!</p>
+          <label for="exampleInputEmail1">Email address</label>
+          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+          <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+      </div>
+      <button id='submitButton' type="submit" class="btn offset-4" data-toggle="modal" data-target="#submitModal">Submit</button>
+      <!-- Modal -->
+<div class="modal fade" id="submitModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal-dialog" role="document">
+<div class="modal-content">
+<div class="modal-header">
+  <h5 class="modal-title" id="exampleModalLabel">Congratulations!</h5>
+  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
 </div>
-        </form>
-    </footer>
-    <script src="./main.js"></script>
+<div class="modal-body">
+  Welcome to the Purple Monkey Dishwasher Brew Masters Club!
+</div>
+<div class="modal-footer">
+  <button id='closeButton' type="button" class="btn" data-dismiss="modal" data-target="#closeModal">Close</button>
+</div>
+</div>
+</div>
+</div>
+  </form>
+</footer>
+    <script src="../main.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
