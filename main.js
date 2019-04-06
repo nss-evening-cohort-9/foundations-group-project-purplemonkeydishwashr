@@ -76,14 +76,16 @@ const beers = [
     },
 
     {
+        id: 2,
         imageUrl: "https://user-images.githubusercontent.com/43094838/55278678-7d015480-52dd-11e9-9bea-a8832cc1699a.png",
         name: "Curious George",
         description: 'In case you were curious, this is our non-alcoholic beer.',
         ingredients: ['good stuff', 'great stuff', 'awesome stuff']
-
+        
     },
-
+    
     {
+        id: 3,
         imageUrl: "https://user-images.githubusercontent.com/43094838/55278680-8094db80-52dd-11e9-848d-faa1662464ba.png",
         name: "King Kong",
         description: "This beer will beer will have you beating your chest because of the hoppy taste...This is the best-seller",
@@ -92,6 +94,7 @@ const beers = [
     },
 
     {
+        id: 4,
         imageUrl: "https://user-images.githubusercontent.com/43094838/55278682-82f73580-52dd-11e9-9adc-53299453725e.png",
         name: "Rafiki",
         description: 'This IPA has an incredible taste of spices and herbs. Very unique...',
@@ -100,6 +103,7 @@ const beers = [
     },
 
     {
+        id: 5,
         imageUrl: "https://user-images.githubusercontent.com/43094838/55278683-84286280-52dd-11e9-9a78-67c61c0c2e8e.png",
         name: "Ceasar",
         description: "This beer help you pass NSS with less assistance as possible",
@@ -114,17 +118,19 @@ const beers = [
 const beerBuilder = () => {
     let beerString = '';
     beers.forEach((beer) => {
-        ingredientString = '';
+        let ingredientString = '';
         beer.ingredients.forEach(ingredient => {
             // loop thru ingredients and build html
-        })
+            ingredientString += `<p>${beer.ingredients}</p>`;
+        });
+        console.log(ingredientString);
         beerString += `<div class="card mt-1 mb-2 col-4">`;
         beerString += `<div class="card-body">`;
         beerString += `<h2 class="card-title">${beer.name}</h2>`;
         beerString += `<img class="card-img-top" src=${beer.imageUrl} alt="Card image cap" ></img>`
         beerString += `<p class="card-text" id=${beer.name}>${beer.description}</p>`;
         beerString += `<div class='d-none'>${ingredientString}</div>`;
-        beerString +=  `<a href="javascript:void(0)" class="btn btn-primary button" id=beer${beer.id}>Info</a>`;
+        beerString +=  `<a href="javascript:void(0)" class="btn btn-primary infoButton" id=beer${beer.id}>Info</a>`;
         beerString += `</div>`;
         beerString += `</div>`;
         // add event listener for the a tag, traverse the dom to find the div with the d-none, remove the class
@@ -133,14 +139,32 @@ const beerBuilder = () => {
 
 };
 
-const myFunction = () => {
-    var x = document.getElementById("text");
-    if (x.style.display === "none") {
-      x.style.display = "block";
-    } else {
-      x.style.display = "none";
+const deleteFunction = (e) => {
+    const buttonId = e.target.previousSibling;
+    ingredients.forEach((ingredient, index) => {
+        if(ingredient.id === buttonId){
+            ingredients.splice(index, 1);
+        }
+    });
+    beerBuilder(ingredients);
+    addDeleteEvents();
+};
+
+const addDeleteEvents = () => {
+    const deleteButtons = document.getElementsByClassName('infoButton');
+    for(let i=0; i<deleteButtons.length; i++){
+        deleteButtons[i].addEventListener('click', deleteFunction);
     }
-  }
+};
+
+// const myFunction = () => {
+//     var x = document.getElementById("text");
+//     if (x.style.display === "none") {
+//       x.style.display = "block";
+//     } else {
+//       x.style.display = "none";
+//     }
+//   }
 
 
 
