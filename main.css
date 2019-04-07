@@ -132,11 +132,14 @@ footer {
 }
 
 
-#myBeer {
+/* #myBeer {
     margin-bottom: 270px;
     overflow: hidden;
-}
+} */
 /* Events */
+#eventContainer {
+    justify-content: center;
+}
 .eventcard {
   width:270px;
   margin: 10px;
@@ -157,6 +160,51 @@ footer {
   background-color: #988bb8;
 }
 
+/*BrewMasters */
+
+#brewMastersDiv {
+    justify-content: center;
+}
+
+
+.cards {
+    max-width:500px;
+    margin: 10px;
+    text-align: center;
+    background-color: white;
+    height: auto;
+    box-shadow: 1px 2px 4px 1px black;
+    padding:0px;
+    }
+
+.card-body {
+    max-width: 350px;
+    text-align: center;
+}
+
+.card-title, .card-text {
+    text-align: center;
+}
+
+.card-img-top {
+    max-width:400px;
+    max-height:400px;
+}
+
+/*Available Beers*/
+#myBeer {
+    justify-content: center;
+    max-width: 100%;
+}
+
+.card-texts {
+height:350px;
+}
+
+.card-titles{
+    font-size: 30px;
+    max-height: 30px;
+}
 /* Mobile Styles */
 @media only screen and (max-width: 500px) {
     .navbar-brand {
@@ -171,6 +219,7 @@ footer {
     .navbar {
         display: block;
         text-align: center;
+        max-width: 100%;
     }
 
     .nav-link:hover, .nav-link:focus{
@@ -180,6 +229,51 @@ footer {
     .footer-address {
       display: none;
     }
+
+    footer {
+        justify-content: center;
+        position: fixed;
+        bottom: 0;
+    }
+    .form-group {
+    justify-content: center;
+    }
+
+    .f-heading {
+        text-align: center;
+    }
+    .btn {
+        justify-content: center;
+    }
+    .text-center a{
+       display: none;
+    }
+    .logo img{
+        max-width: 105px;
+    }
+  }
+
+/* Mobile Styles */
+@media only screen and (min-width: 501px) and (max-width: 769px) {
+    .navbar-brand {
+        display: block;
+        text-align: center;
+    }
+    .brand-image {
+        display: block;
+        max-width: 100px;
+        margin: 0 auto;
+    }
+    .navbar {
+        display: block;
+        text-align: center;
+        max-width: 100%;
+    }
+
+    .nav-link:hover, .nav-link:focus{
+        justify-content: center;
+    }
+
 
     footer {
         justify-content: center;

@@ -20,7 +20,7 @@ const events = [
         title: 'Yoga & Brew',
         date: 'Every Saturday',
         time:  '9:00am',
-        description: 'Come and join us for yoga. Free HaramBae beer with purchase of yoga.',
+        description: 'Come and join us for yoga. Free HaramBAE beer with purchase of yoga.',
         price: '$10',
         imageUrl: 'https://i1.wp.com/jackalopebrew.com/wp-content/uploads/2018/09/IMG_4122.jpg?zoom=2&fit=1472%2C1840&ssl=1',
     },
@@ -30,7 +30,7 @@ const events = [
         time:  '7:00pm',
         description: 'Join us for Trivia nights at PurplemonkeydishwashrBrewery on Thursdays from 7:00-10:00pm! Test your knowledge all while drinking our ver own in house beer. Cash Prizes paid in Beer!',
         price: '$10',
-        imageUrl: 'https://raw.githubusercontent.com/nss-evening-cohort-9/foundations-group-project-purplemonkeydishwashr/master/TRIVIANOV18.png',
+        imageUrl: '../img/trivia.png',
     },
     {
         title: 'Pickup for a Pint',
@@ -44,7 +44,7 @@ const events = [
         title: 'Tasting Tuesday',
         date: '04/16/2019',
         time:  '7:00pm',
-        description: 'Every 3rd Tuesday of the Month, come join us for a beer and cheese tasting. Try our very own PurplemonkeydishwashrBrewery beer with your favority local cheeses.',
+        description: 'Every 3rd Tuesday of the Month, come join us for a beer and cheese tasting. Try our very own PurplemonkeydishwashrBrewery beer with your favorite local cheeses.',
         price: '$35',
         imageUrl: 'https://d3tv8y14ogpztx.cloudfront.net/pulses/images/000/033/531/show_box/beer-tasting.jpg',
     },
@@ -69,7 +69,7 @@ const eventType = (l) => {
     let domString = '';
     l.forEach((event) => {
         domString += `<div class="row">`;
-      domString += `<div class="col-4">`;
+      domString += `<div class="col-3">`;
       domString += `<div class= "eventcard" style="width: 25rem;">`;
       domString += `<h2>${event.title}</h2>`; 
       domString += `<image id="eventimg" class="card-img-top" src=${event.imageUrl}></img>`;
@@ -132,7 +132,7 @@ const beers = [
         imageUrl: "https://user-images.githubusercontent.com/43094838/55278679-7ecb1800-52dd-11e9-94d1-99960ee6e9d1.png",
         name: "HaramBAE",
         description: 'This beer will probably kill you. 99.9% alcohol. Beware.',
-        ingredients: ['good stuff', 'great stuff', 'awesome stuff']
+        ingredients: ['Citrus', 'Isopropyl Alcohol', 'Cinnamon']
         
     },
     
@@ -141,7 +141,7 @@ const beers = [
         imageUrl: "https://user-images.githubusercontent.com/43094838/55278677-7bd02780-52dd-11e9-8043-3dbdae7ef11b.png",    
         name: "MoJo JoJo Brew",
         description: 'Beer and energy drink combined. You will be unstoppable.',
-        ingredients: ['good stuff', 'great stuff', 'awesome stuff']
+        ingredients: ['Sugar', 'Spice', 'Chemical X']
 
     },
 
@@ -150,7 +150,7 @@ const beers = [
         imageUrl: "https://user-images.githubusercontent.com/43094838/55278678-7d015480-52dd-11e9-9bea-a8832cc1699a.png",
         name: "Curious George",
         description: 'In case you were curious, this is our non-alcoholic beer.',
-        ingredients: ['good stuff', 'great stuff', 'awesome stuff']
+        ingredients: ['Banana', 'Honey', 'Cherry']
         
     },
     
@@ -158,8 +158,8 @@ const beers = [
         id: 3,
         imageUrl: "https://user-images.githubusercontent.com/43094838/55278680-8094db80-52dd-11e9-848d-faa1662464ba.png",
         name: "King Kong",
-        description: "This beer will beer will have you beating your chest because of the hoppy taste...This is the best-seller",
-        ingredients: ['good stuff', 'great stuff', 'awesome stuff']
+        description: "This beer will beer will have you beating your chest because of the strong taste.",
+        ingredients: ['People', 'Vanilla', 'High Fructose Corn Syrup']
 
     },
 
@@ -167,8 +167,8 @@ const beers = [
         id: 4,
         imageUrl: "https://user-images.githubusercontent.com/43094838/55278682-82f73580-52dd-11e9-9adc-53299453725e.png",
         name: "Rafiki",
-        description: 'This IPA has an incredible taste of spices and herbs. Very unique...',
-        ingredients: ['good stuff', 'great stuff', 'awesome stuff']
+        description: 'This IPA has an incredible taste of spices and herbs. Very unique.',
+        ingredients: ['Zazu', 'Timon', 'Pumba']
 
     },
 
@@ -176,8 +176,8 @@ const beers = [
         id: 5,
         imageUrl: "https://user-images.githubusercontent.com/43094838/55278683-84286280-52dd-11e9-9a78-67c61c0c2e8e.png",
         name: "Ceasar",
-        description: "This beer help you pass NSS with less assistance as possible",
-        ingredients: ['good stuff', 'great stuff', 'awesome stuff']
+        description: "This beer help you pass NSS with ease",
+        ingredients: ['Lime', 'Kiwi', 'Brain Power']
 
     }
 ];
@@ -193,9 +193,9 @@ const beerBuilder = () => {
             ingredientString += `<p>${ingredient}</p>`;
         });
         console.log(ingredientString);
-        beerString += `<div class="card mt-1 mb-2 col-4">`;
+        beerString += `<div class="card">`;
         beerString += `<div class="card-body">`;
-        beerString += `<h2 class="card-title">${beer.name}</h2>`;
+        beerString += `<h2 class="card-titles">${beer.name}</h2>`;
         beerString += `<img class="card-img-top" src=${beer.imageUrl} alt="Card image cap" ></img>`
         beerString += `<p class="card-text" id=${beer.name}>${beer.description}</p>`;
         beerString += `<div class='d-none'>${ingredientString}</div>`;
@@ -257,9 +257,9 @@ const brewMasters = [
 const brewMastersBuilder = (x) => {
     let message = '';
     x.forEach((brewMaster) => {
-        message += `<div class="card col-5" style="width: 18rem;">
+        message += `<div class="cards">
         <h2 class="card-title"><b>${brewMaster.name}</b></h2>
-        <img src='${brewMaster.image}' class="card-img-top rounded mx-auto" style="height: 60%;" alt="...">
+        <img src='${brewMaster.image}' class="card-img-top rounded mx-auto" >
         <div class="card-body">
           <h5 class="card-title"><b>${brewMaster.jobTitle}</b></h5>
           <p class="card-text">${brewMaster.responsibilities}</p>
